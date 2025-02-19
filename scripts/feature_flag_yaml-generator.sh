@@ -7,7 +7,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # 공통 경로 정의
-BASE_PATH="Foundation/FeatureFlag"
+BASE_PATH="../Foundation/FeatureFlag"
 FEATURE_DIR="$BASE_PATH/Sources/YAML/Feature"
 OVERRIDE_DIR="$BASE_PATH/Sources/YAML/Override"
 SWIFTGEN_CONFIG="$BASE_PATH/swiftgen.yml"
