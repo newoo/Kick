@@ -7,7 +7,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # 공통 경로 정의
-BASE_PATH="../Foundation/FeatureFlag"
+BASE_PATH="../FeatureFlag"
 FEATURE_DIR="$BASE_PATH/Sources/YAML/Feature"
 OVERRIDE_DIR="$BASE_PATH/Sources/YAML/Override"
 SWIFTGEN_CONFIG="$BASE_PATH/swiftgen.yml"
@@ -109,8 +109,8 @@ parameters:"
     # 오버라이드 YAML 생성
     while true; do
         echo -e "\n${BLUE}오버라이드 YAML 생성${NC}"
-        DEFAULT_OVERRIDE_NAME="${FEATURE_NAME}Override"
-        read -p "$(echo -e "${GREEN}오버라이드 이름을 입력하세요 (기본값: $DEFAULT_OVERRIDE_NAME): ${NC}")" OVERRIDE_NAME
+        DEFAULT_OVERRIDE_NAME="Override"
+        read -p "$(echo -e "${GREEN}오버라이드 이름을 입력하세요 (기본값: ${FEATURE_NAME}Override): ${NC}")" OVERRIDE_NAME
         OVERRIDE_NAME=${OVERRIDE_NAME:-$DEFAULT_OVERRIDE_NAME}
         
         # App Scheme 선택
@@ -187,8 +187,8 @@ create_quick_override_yaml() {
     PROJECT_NAME=$(grep "projectName:" "$FEATURE_YAML_PATH" | cut -d: -f2 | tr -d ' ')
     PROJECT_NAME=${PROJECT_NAME:-ohouse}
 
-    DEFAULT_OVERRIDE_NAME="${FEATURE_NAME}Override"
-    read -p "$(echo -e "${GREEN}오버라이드 이름을 입력하세요 (기본값: $DEFAULT_OVERRIDE_NAME): ${NC}")" OVERRIDE_NAME
+    DEFAULT_OVERRIDE_NAME="Override"
+    read -p "$(echo -e "${GREEN}오버라이드 이름을 입력하세요 (기본값: ${FEATURE_NAME}Override): ${NC}")" OVERRIDE_NAME
     OVERRIDE_NAME=${OVERRIDE_NAME:-$DEFAULT_OVERRIDE_NAME}
     DESCRIPTION="${FEATURE_NAME} override"
     
